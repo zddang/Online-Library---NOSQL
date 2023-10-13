@@ -1,0 +1,553 @@
+# Categories
+
+db.categories.insert({	categoryID: 'cat01',
+				genres: 'Fantasy'})
+
+db.categories.insertMany([
+				{categoryID: 'ca02',
+				genres: 'Adventure'},
+				{categoryID: 'ca03',
+				genres: 'Romance'},
+				{categoryID: 'ca04',
+				genres: 'Horror'},
+				{categoryID: 'ca05',
+				genres: 'History'},
+				{categoryID: 'ca06',
+				genres: 'Science'},
+				{categoryID: 'ca07',
+				genres: 'Travel'},
+				{categoryID: 'ca08',
+				genres: 'Cookbook'},
+				{categoryID: 'ca09',
+				genres: 'Information system'},
+				{categoryID: 'ca10',
+				genres: 'Busisness'}])
+
+
+#Members
+
+db.members.insert({
+			memberID: 01, 
+			members_lname: 'Shahid', 
+			member_fname:"Mian", 
+			email: 'mmashahid@protonmail.com', 
+			phone_number: 6475625993,  
+			address: {
+					street: '3495 morining star dr', 
+					city: 'Mississauga', 
+					province: 'Ontario', 
+					postal_code: "l4T 2E6" }
+})
+
+db.members.insertOne({	
+				memberID: 02, 
+				members_lname: 'Jan', 
+				member_fname:"Suhail", 
+				email: 'jansuahail@protonmail.com', 
+				phone_number: 6475625554,  
+				address: {
+					street: '3126 etude dr', 
+					city: 'Mississauga', 
+					province: 'Ontario', 
+					postal_code: "l4T 2E7" }
+})
+
+
+
+db.members.insertOne({	
+				memberID: 03, 
+				members_lname: 'Ahmad', 
+				member_fname:"Bilal", 
+				email: 'bilal@protonmail.com', 
+				phone_number: 6475622134,  
+				address: {
+						street: '2024 mosque cres', 
+						city: 'Mississauga', 
+						province: 'Ontario', 
+						postal_code: "Mj7 2E7" }
+})
+
+
+
+db.members.insertOne({
+				memberID: 04, 
+				members_lname: 'Jahanzaib', 
+				member_fname:"Khan", 
+				email: 'jk@protonmail.com', 
+				phone_number: 6475622856,  
+				address: {
+						street: '56 raxdale blvd', 
+						city: 'Mississauga', 
+						province: 'Ontario', 
+						postal_code: "Mj7 2k4" }
+})
+
+
+
+db.members.insertOne({
+				memberID: 05, 
+				members_lname: 'Hassnain', 
+				member_fname:"Sajjad", 
+				email: 'hassnainsajjad@protonmail.com', 
+				phone_number: 6475622179,  
+				address: {
+						street: '2022 derry road', 
+						city: 'Mississauga', 
+						province: 'Ontario', 
+						postal_code: "Mj7 2M9" }
+})
+
+db.members.insertOne({
+				memberID: 06, 
+				members_lname: 'Dang', 
+				member_fname:"Luna", 
+				email: 'lunad@protonmail.com', 
+				phone_number: 3659986798,  
+				address: {
+						street: '12 Carberry Cres', 
+						city: 'Brampton', 
+						province: 'Ontario', 
+						postal_code: "L6V 2E9" }
+})
+
+
+# Authors
+
+db.authors.insert({
+				authorID: 'au01',
+				author_lname: 'Sadalage',
+				author_fname: 'Pramod'
+})
+
+db.authors.insertMany([
+				{authorID: 'au02',
+				author_lname: 'Martin',
+				author_fname: 'Fowler'},
+
+				{authorID: 'au03',
+				author_lname: 'Kenneth',
+				author_fname: 'Lambert'},
+
+				{authorID: 'au04',
+				author_lname: 'Amanda',
+				author_fname: 'Fooddy'},
+
+				{authorID: 'au05',
+				author_lname: 'Christine',
+				author_fname: 'Lynn'},
+
+				{authorID: 'au06',
+				author_lname: 'Carlos',
+				author_fname: 'Coronel'},
+
+				{authorID: 'au07',
+				author_lname: 'Steven',
+				author_fname: 'Morris'},
+
+				{authorID: 'au08',
+				author_lname: 'Tahir',
+				author_fname: 'Sabaa'}])
+
+
+#Publishers
+
+db.publishers.insert({
+				publisherid: 'pub01',
+				publisher_name: 'Course Technology',
+				publisher_location: 'Boston, USA'
+})
+
+db.publishers.insertMany([
+				{publisherid: 'pub02',
+				publisher_name: 'Tom Doherty Association',
+				publisher_location: 'Toronto, Canada'},
+				
+				{publisherid: 'pub03',
+				publisher_name: 'Penguin Random House',
+				publisher_location: 'London, UK'},
+
+				{publisherid: 'pub04',
+				publisher_name: 'Wesley',
+				publisher_location: 'New York, USA'}])
+
+#Books
+db.books.insert({
+			ISBN: 88001,
+			title: "All of Our Demise",
+			publisher_id: 'pub02',
+			publication_date: 2022,
+			edition: '1st',
+			online_availability: false,
+			instore_availability: true,
+			quantity_in_stock: 3
+			})
+
+db.books.insertOne({
+			ISBN: 77001,
+			title: "Database Systems",
+			publisher_id: 'pub01',
+			publication_date: 2009,
+			edition: '9th',
+			online_availability: true,
+			instore_availability: true,
+			quantity_in_stock: 5})
+
+
+db.books.insertOne({
+			ISBN: 77002,
+			title: "Fundamentals of Python",
+			publisher_id: 'pub01',
+			publication_date: 2010,
+			edition: '5th',
+			online_availability: true,
+			instore_availability: true,
+			quantity_in_stock: 6})
+
+db.books.insertOne({
+			ISBN: 77003,
+			title: "Statistics for Management and Economics",
+			publisher_id: 'pub01',
+			publication_date: 2018,
+			edition: '11th',
+			online_availability: true,
+			instore_availability: false,
+			quantity_in_stock: 0
+			})
+
+db.books.insertOne({
+			ISBN: 88002,
+			title: "All My Rage A Novel",
+			publisher_id: 'pub03',
+			publication_date: 2022,
+			edition: '1st',
+			online_availability: false,
+			instore_availability: true,
+			quantity_in_stock: 4})
+
+db.books.insertOne({
+			ISBN: 77004,
+			title: "NoSQL Distilled",
+			publisher_id: 'pub04',
+			publication_date: 2013,
+			edition: '3rd',
+			online_availability: true,
+			instore_availability: true,
+			quantity_in_stock: 6})
+
+#BookAuthor
+
+db.bookauthor.insert({
+				ISBN: 88001,
+				author: [{authorID: 'au04'},{authorID: 'au05'}]})
+
+db.bookauthor.insertMany([
+				{ISBN: 88002,
+				author: {authorID: 'au08'}},
+				{ISBN: 77001,
+				author: [{authorID: 'au02'}, {authorID: 'au06'},{authorID: 'au07'}]},
+				{ISBN: 77002,
+				author: {authorID: 'au03'}},
+				{ISBN: 77003,
+				author: {authorID: 'au03'}},
+				{ISBN: 77004,
+				author: {authorID: 'au01'}}])
+
+db.bookcategory.insert({
+				ISBN: 88001,
+				category: [{categoryID: 'ca01'}, {categoryID: 'ca04'}]})
+
+
+db.bookcategory.insertMany([
+				{ISBN: 88002,
+				category: [{categoryID: 'ca02'}, {categoryID: 'ca05'}]},
+
+				{ISBN: 77001,
+				category: {categoryID: 'ca09'}},
+
+				{ISBN: 77002,
+				category: [{categoryID: 'ca06'}, {categoryID: 'ca09'}]},
+
+				{ISBN: 77003,
+				category: [{categoryID: 'ca09'},{categoryID: 'ca10'}]},
+
+				{ISBN: 77004,
+				category:[{categoryID: 'ca09'},{categoryID: 'ca06'}]}])
+
+#Borrowing:
+db.bookBorrowing.insert({
+				memberID: 01,
+				ISBN: 77001,
+				date_borrow: new Date("2022-10-1"),
+				due_date: new Date("2022-10-22"),	
+				return_date: new Date("2022-10-19"),	
+				fine_amount: 0.00,
+				payment_status: 'n/a',
+				Payment_date: 'n/a'})
+
+db.bookBorrowing.insertOne({
+				memberID: 02,
+				ISBN: 88001,
+				date_borrow: new Date("2022-10-12"),
+				due_date: new Date("2022-11-1"),	
+				return_date: 'n/a',
+				fine_amount: 1.00,
+				payment_status: 'unpaid',
+				Payment_date: 'n/a'})
+
+db.bookBorrowing.insertOne({
+				memberID: 03,
+				ISBN: 88002,
+				date_borrow: new Date("2022-9-10"),	
+				due_date: new Date("2022-9-30"),	
+				return_date: new Date("2022-10-15"),
+				fine_amount: 2.00,
+				payment_status: 'paid',
+				Payment_date: new Date("2022-10-15")})
+
+db.bookBorrowing.insertOne({
+				memberID: 03,
+				ISBN: 77004,
+				date_borrow: new Date("2022-9-10"),	
+				due_date: new Date("2022-9-30"),	
+				return_date: new Date("2022-10-15"),
+				fine_amount: 2.00,
+				payment_status: 'paid',
+				Payment_date: new Date("2022-10-15")	
+
+})
+
+db.bookBorrowing.insertOne({
+				memberID: 04,
+				ISBN: 88002,
+				date_borrow: new Date("2022-10-10"),	
+				due_date: new Date("2022-10-31"),	
+				return_date: 'n/a',	
+				fine_amount: 3.00,
+				payment_status: 'unpaid',
+				Payment_date: 'n/a'})
+
+db.bookBorrowing.insertOne({
+				memberID: 05,
+				ISBN: 77002,
+				date_borrow: new Date("2022-10-29"),	
+				due_date: new Date("2022-11-12"),	
+				return_date: 'n/a',
+				fine_amount: 0.00,
+				payment_status: 'n/a',
+				Payment_date: 'n/a'
+
+})
+
+
+#Books have category as "Information system"
+db.bookcategory.aggregate([{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+{$lookup:{from: 'categories', localField: 'category.categoryID', foreignField: 'categoryID', as: 'Category'}}, 
+{$match: {'Category.genres': 'Information system'}}, 
+{$project:{'_id': 0, 'Category.genres': 1,'ISBN': 1, 'Book.title': 1}}]).pretty()
+
+
+{
+        "ISBN" : 77001,
+        "Book" : [
+                {
+                        "title" : "Database Systems"
+                }
+        ],
+        "Category" : [
+                {
+                        "genres" : "Information system"
+                }
+        ]
+}
+{
+        "ISBN" : 77002,
+        "Book" : [
+                {
+                        "title" : "Fundamentals of Python"
+                }
+        ],
+        "Category" : [
+                {
+                        "genres" : "Information system"
+                }
+        ]
+}
+
+
+
+db.bookBorrowing.aggregate(
+    [
+       {
+          $group:
+             {
+                 _id: null,
+                 averageTime:
+                    {
+                       $avg:
+                          {
+                             $dateDiff:
+                                {
+                                    startDate: "$date_borrow",
+                                    endDate: "$due_date",
+                                    unit: "day"
+                                }
+                           }
+                    }
+             }
+       },
+       {
+          $project:
+             {
+                _id: 0,
+                numDays:
+                   {
+                      $trunc:
+                         [ "$averageTime", 1 ]
+                   }
+             }
+        }
+    ]
+)
+
+
+db.bookBorrowing.aggregate([
+  {
+    $project: {
+      days: {
+        $dateDiff: {
+          startDate: "$date_borrow",
+          endDate: "$due_date",
+          unit: "day"
+        }
+      },
+      _id: 0
+    }
+  }
+])
+
+db.bookBorrowing.aggregate([{ $project: {_id: 0,
+							"date_borrow": 1, 
+       						"due_date": 1, 
+       						"borrowingPeriod": {$divide: [{$subtract: [ "$due_date", "$date_borrow" ]}, 1000*60*60*24]}}}])
+
+
+> db.bookBorrowing.aggregate([{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+ {$project: {"_id": 0, "Book.title":1,"date_borrow": 1, "due_date": 1, "borrowingPeriod": {$divide: [{$subtract: [ "$due_date", "$date_borrow" ]}, 1000*60*60*24]}}}]).pretty()
+{
+        "date_borrow" : ISODate("2022-10-01T00:00:00Z"),
+        "due_date" : ISODate("2022-10-22T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "Database Systems"
+                }
+        ],
+        "borrowingPeriod" : 21
+}
+{
+        "date_borrow" : ISODate("2022-10-12T00:00:00Z"),
+        "due_date" : ISODate("2022-11-01T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "All of Our Demise"
+                }
+        ],
+        "borrowingPeriod" : 20
+}
+{
+        "date_borrow" : ISODate("2022-09-10T00:00:00Z"),
+        "due_date" : ISODate("2022-09-30T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "All My Rage A Novel"
+                }
+        ],
+        "borrowingPeriod" : 20
+}
+{
+        "date_borrow" : ISODate("2022-09-10T00:00:00Z"),
+        "due_date" : ISODate("2022-09-30T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "NoSQL Distilled"
+                }
+        ],
+        "borrowingPeriod" : 20
+}
+{
+        "date_borrow" : ISODate("2022-10-10T00:00:00Z"),
+        "due_date" : ISODate("2022-10-31T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "All My Rage A Novel"
+                }
+        ],
+        "borrowingPeriod" : 21
+}
+{
+        "date_borrow" : ISODate("2022-10-29T00:00:00Z"),
+        "due_date" : ISODate("2022-11-12T00:00:00Z"),
+        "Book" : [
+                {
+                        "title" : "Fundamentals of Python"
+                }
+        ],
+        "borrowingPeriod" : 14
+}
+
+
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+{$project: {"_id": 0, "Book.title": 1, "return_date": 1}}, 
+{$match: {"return_date": 'n/a'}}])
+
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'members', localField: 'memberID', foreignField: 'memberID', as: 'Member'}},
+{$project: {"_id": 0, "Member.member_fname":1,"Member.member_lname":1}},
+{$group: {_id: '$memberID', totalFine:{$sum: "$fine_amount"}}}])
+
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+{$project: {"_id": 0, "Book.title": 1, "return_date": 1, }},
+{$match: {"due_date":{$gte:ISODate("2022-11-12")}}}]) 
+
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+{$match: {"due_date":{$gte:ISODate("2022-11-12")}}}]).pretty()
+
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'members', localField: 'memberID', foreignField: 'memberID', as: 'Member'}},
+{$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}}, {$match: {"ISBN" : 88002}}]).pretty()
+
+db.bookBorrowing.aggregate([{$lookup: {from: 'members', localField: 'memberID', foreignField: 'memberID', as: 'Member'}},
+... {$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}}, {$match: {"Book.title" : "All My Rage A Novel"}},
+{$project:{"_id": 0, "Member.memberID":1, "Member.member_fname":1, "Member.members_lname":1, "Book.title":1, "ISBN":1}}]).pretty()
+
+db.bookcategory.aggregate([{$lookup: {from: 'categories', localField: 'category.categoryID', foreignField: 'categoryID', as: 'Category'}},
+... {$lookup: {from: 'books', localField: 'ISBN', foreignField: 'ISBN', as: 'Book'}},
+{$project:{"_id": 0,"ISBN":1, "Category.categoryID":1, "Category.genres":1, "Book.title":1}}]).pretty()
+
+db.bookcategory.aggregate([{$lookup: {from: 'categories', localField: 'category.categoryID', foreignField: 'categoryID', as: 'Category'}},
+{$project:{"_id": 0,"Category.categoryID":1 "Category.genres":1}}]).pretty()
+
+db.bookauthor.aggregate([{$lookup:{from: 'authors', localField: 'author.authorID', foreignField:"authorID", as: "Author"}},
+{$project:{"_id": 0,"Author.authorID":1, "ISBN":1}}]).pretty()
+
+db.bookauthor.aggregate([{$lookup:{from: 'authors', localField: 'author.authorID', foreignField:"authorID", as: "Author"}}])
+
+db.bookcategory.aggregate([{$lookup: {from: 'categories', localField: 'category.categoryID', foreignField: 'categoryID', as: 'Category'}}])
+
+db.bookauthor.aggregate([{$lookup: {from: 'authors', 'localField': 'author.authorID', foreignField: 'authorID', as: "Author"}},{$match: {'Author.authorID': "au03"}}]).pretty()
+
+
+db.runCommand({
+	q: "bookBorrowing",
+	u:[{$match: {"due_date": new Date("2022-11-12")}}, {$set: {$inc:{fine_amount}}}]
+})
+
+db.bookBorrowing.deleteMany({'Payment_status': 'paid'})
+
+
+var memID = db.members.aggregate([{$lookup:{from: "bookBorrowing", localField: "memberID", foreignField:"memberID", as: "Borrowing"}},{$project:{"_id":0, "memberID":1}}])
+
+
+db.members.aggregate([{$lookup:{from: "bookBorrowing", localField: "memberID", foreignField:"memberID", as: "Borrowing"}},{$match:{"Borrow":[]}}])

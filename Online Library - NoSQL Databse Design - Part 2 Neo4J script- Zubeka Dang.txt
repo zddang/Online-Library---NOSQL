@@ -1,0 +1,434 @@
+#Create members
+CREATE(Mian:member{memberID: 'm01', name:"Mian Shahid", email:"mmashahid@protonmail.com", phone_number: 6475625993, 
+address:"3495 Morining Star Dr", city: "Mississauga", province: "Ontario", postal_code: "l4T 2E6"})
+CREATE(Suhail:member{memberID: 'm02', name:"Suhail Jan", email:"jansuahail@protonmail.com", phone_number: 6475625554, 
+address:"3126 etude dr", city: "Mississauga", province: "Ontario", postal_code: "l4T 2E7"})
+CREATE(Bilal:member{memberID: 'm03', name:"Bilal Ahmad", email:"bilal@protonmail.com", phone_number: 6475622134, 
+address:"2024 mosque cres", city: "Mississauga", province: "Ontario", postal_code: "MJ7 2E7"})
+CREATE(Khan:member{memberID: 'm04', name:"Khan Jahanzaib", email:"jk@protonmail.com", phone_number: 6475622856, 
+address:"56 raxdale blvd", city: "Mississauga", province: "Ontario", postal_code: "MJ7 2K4"})
+CREATE(Sajjad:member{memberID: 'm05', name:"Sajjad Hassnain", email:"hassnainsajjad@protonmail.com", phone_number: 6475622179, 
+address:"2022 derry road", city: "Mississauga", province: "Ontario", postal_code: "MJ7 2M9"})
+CREATE(Luna:member{memberID: 'm06', name:"Luna Dang", email:"lunad@protonmail.com", phone_number: 3659986798, 
+address:"12 Carberry Cres", city: "Brampton", province: "Ontario", postal_code: "L6V 2E9"})
+
+#Create Categories
+CREATE(Fantasy: category{categoryID: 'ca01', genres: 'Fantasy'})
+CREATE(Adventure: category{categoryID: 'ca02', genres: 'Adventure'})
+CREATE(Romance: category{categoryID: 'ca03', genres: 'Romance'})
+CREATE(Horror: category{categoryID: 'ca04', genres: 'Horror'})
+CREATE(History: category{categoryID: 'ca05', genres: 'History'})
+CREATE(Science: category{categoryID: 'ca06', genres: 'Science'})
+CREATE(Travel: category{categoryID: 'ca07', genres: 'Travel'})
+CREATE(Cookbook: category{categoryID: 'ca08', genres: 'Cookbook'})
+CREATE(InformationSystem: category{categoryID: 'ca09', genres: 'Information system'})
+CREATE(Busisness: category{categoryID: 'ca10', genres: 'Busisness'})
+
+#Create Authors
+CREATE(Pramod: author{authorID: 'au01', name: 'Pramod Sadalage'})
+CREATE(Fowler: author{authorID: 'au02', name: 'Martin Fowler'})
+CREATE(Lambert: author{authorID: 'au03', name: 'Lambert Kenneth'})
+CREATE(Fooddy: author{authorID: 'au04', name: 'Amanda Fooddy'})
+CREATE(Lynn: author{authorID: 'au05', name: 'Christine Lynn'})
+CREATE(Carlos: author{authorID: 'au06', name: 'Carlos Coronel'})
+CREATE(Steven: author{authorID: 'au07', name: 'Steven Morris'})
+CREATE(Tahir: author{authorID: 'au08', name: 'Tahir Sabaa'})
+
+#Create Publishers
+CREATE(CT:publisher{publisherid: 'pub01', publisher_name: 'Course Technology', publisher_location: 'Boston, USA'})
+CREATE(TD:publisher{publisherid: 'pub02', publisher_name: 'Tom Doherty Association', publisher_location: 'Toronto, Canada'})
+CREATE(PR:publisher{publisherid: 'pub03', publisher_name: 'Penguin Random House', publisher_location: 'London, UK'})
+CREATE(Wesley:publisher{publisherid: 'pub04', publisher_name: 'Wesley', publisher_location: 'New York, USA'})
+
+#Create Books
+CREATE(DatabaseSystem: book{
+			ISBN: 77001,
+			title: "Database Systems",
+			publisher_id: 'pub01',
+			publication_date: 2009,
+			edition: '9th',
+			online_availability: True,
+			instore_availability: True,
+			quantity_in_stock: 5})
+CREATE(FundamentalsOfPython: book{
+			ISBN: 77002,
+			title: "Fundamentals of Python",
+			publisher_id: 'pub01',
+			publication_date: 2010,
+			edition: '5th',
+			online_availability: true,
+			instore_availability: true,
+			quantity_in_stock: 6})
+
+CREATE(StatisticsForManagementAndEconomics: book{
+			ISBN: 77003,
+			title: "Statistics for Management and Economics",
+			publisher_id: 'pub01',
+			publication_date: 2018,
+			edition: '11th',
+			online_availability: true,
+			instore_availability: false,
+			quantity_in_stock: 0
+			})
+
+CREATE(AllMyRageANovel: book{ISBN: 88002,
+			title: "All My Rage A Novel",
+			publisher_id: 'pub03',
+			publication_date: 2022,
+			edition: '1st',
+			online_availability: false,
+			instore_availability: true,
+			quantity_in_stock: 4})
+
+CREATE(NoSQLDistilled: book{ISBN: 77004,
+			title: "NoSQL Distilled",
+			publisher_id: 'pub04',
+			publication_date: 2013,
+			edition: '3rd',
+			online_availability: true,
+			instore_availability: true,
+			quantity_in_stock: 6})
+
+CREATE(AllofOurDemise: book{ISBN: 88001,
+			title: "All of Our Demise",
+			publisher_id: 'pub02',
+			publication_date: 2022,
+			edition: '1st',
+			online_availability: false,
+			instore_availability: true,
+			quantity_in_stock: 3})
+
+
+#Create book-author relationships
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 88001 
+AND a.authorID = 'au04'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 88001 
+AND a.authorID = 'au05'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 88002 
+AND a.authorID = 'au08'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77001 
+AND a.authorID = 'au02'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77001 
+AND a.authorID = 'au06'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77001 
+AND a.authorID = 'au07'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77002 
+AND a.authorID = 'au03'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77003 
+AND a.authorID = 'au03'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+MATCH (a:author),(b:book)
+WHERE b.ISBN = 77004 
+AND a.authorID = 'au01'
+CREATE (a)-[:WROTE]->(b)
+RETURN a,b
+
+
+#Create Book-Category relationships
+
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 88001
+AND c.categoryID = 'ca01'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 88001
+AND c.categoryID = 'ca04'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 88002
+AND c.categoryID = 'ca02'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77001
+AND c.categoryID = 'ca09'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77002
+AND c.categoryID = 'ca06'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77002
+AND c.categoryID = 'ca09'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77003
+AND c.categoryID = 'ca09'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77003
+AND c.categoryID = 'ca10'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77004
+AND c.categoryID = 'ca09'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+MATCH (b:book),(c:category)
+WHERE b.ISBN = 77004
+AND c.categoryID = 'ca06'
+CREATE (b)-[:PART_OF]->(c)
+RETURN b,c
+
+
+#Create Book-Publisher relationships
+
+MATCH (p:publisher), (b:book)
+WHERE p.publisherid = b.publisher_id
+CREATE (p)-[:PUBLISH]->(b)
+RETURN p,b
+
+
+#Create book-member Borrowing relationships
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm01'
+AND b.ISBN = 77001 
+CREATE (m)-[r:borrow {date_borrow: date("2022-10-12"),
+				due_date: date("2022-10-22"),	
+				return_date: date("2022-10-19"),
+				fine_amount: 0.00,
+				payment_status: 'n/a',
+				Payment_date: 'n/a'}]->(b)  
+RETURN m,b 
+
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm02'
+AND b.ISBN = 88001 
+CREATE (m)-[r:borrow {date_borrow: date("2022-10-12"),
+				due_date: date("2022-11-1"),	
+				return_date: 'n/a',
+				fine_amount: 1.00,
+				payment_status: 'unpaid',
+				Payment_date: 'n/a'}]->(b)  
+RETURN m,b
+
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm03'
+AND b.ISBN = 88002 
+CREATE (m)-[r:borrow {date_borrow: date("2022-9-10"),	
+				due_date: date("2022-9-30"),	
+				return_date: date("2022-10-15"),
+				fine_amount: 2.00,
+				payment_status: 'paid',
+				Payment_date: date("2022-10-15")}]->(b)  
+RETURN m,b 
+
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm03'
+AND b.ISBN = 77004 
+CREATE (m)-[r:borrow {date_borrow: date("2022-9-10"),	
+				due_date: date("2022-9-30"),	
+				return_date: date("2022-10-15"),
+				fine_amount: 2.00,
+				payment_status: 'paid',
+				Payment_date: date("2022-10-15")}]->(b)  
+RETURN m,b 
+
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm04'
+AND b.ISBN = 88002 
+CREATE (m)-[r:borrow {date_borrow: date("2022-10-10"),	
+				due_date: date("2022-10-31"),	
+				return_date: 'n/a',	
+				fine_amount: 3.00,
+				payment_status: 'unpaid',
+				Payment_date: 'n/a'}]->(b)  
+RETURN m,b 
+
+MATCH (m:member), (b:book) 
+WHERE m.memberID = 'm05'
+AND b.ISBN = 77002 
+CREATE (m)-[r:borrow {date_borrow: date("2022-10-29"),	
+				due_date: date("2022-11-12"),	
+				return_date: 'n/a',
+				fine_amount: 0.00,
+				payment_status: 'n/a',
+				Payment_date: 'n/a'}]->(b)  
+RETURN m,b 
+
+
+
+#(1) Show all the collections:
+
+MATCH (n) RETURN n
+
+#(2) Retrieve all information on the users that live in ‘Brampton’
+MATCH (n:member)
+WHERE n.city = 'Brampton'
+RETURN n
+
+(3) Retrieve all information on all of the books published after 2018
+MATCH (n:book)
+WHERE n.publication_date > 2018
+RETURN n
+(4) Find all members who borrow the book "All My Rage A Novel”
+MATCH (m:member)<-[:borrow]->(b:book)
+WHERE b.title = 'All My Rage A Novel' 
+RETURN m.name, m.memberID
+
+match (c:Company)<-[:WORK_FOR]-(p:Person)-[:HAS]->(s:Skill),(c:Company)<-[:WORK_FOR]-(other:Person)-[:HAS]->(s:Skill) 
+where p.pname="Bill" 
+return other as people_with_same_skill_with_Bill, s as skills
+
+#(5) Show Authors’ name, but do not show _id:
+MATCH (a:author)
+RETURN a.name as AuthorName
+
+#(6) Retrieve all information on the publishers that are not in ‘Toronto, Canada’
+MATCH (n:publisher)
+WHERE n.publisher_location <> "Toronto, Canada"
+RETURN n
+
+#(7) Count the number of books written by the author with authorID as ‘au03’
+MATCH (a:author)<-[:WROTE]->(b:book)
+WHERE a.authorID = 'au03' 
+RETURN COUNT(b) 
+
+#(8) Find the total fine amount that members who have borrowed books have had to pay.
+MATCH (m:member)<-[r:borrow]->(b:book)
+RETURN m.name, SUM(r.fine_amount) as TotalFineAmount
+
+#(9) Find title and genres of books
+MATCH (b:book)<-[:PART_OF]->(c:category)
+RETURN t.title as Title, c.genres
+
+#(10) (1) Retrieve all information on the books that have borrowing due date is "2022-11-12".
+MATCH (m:member)<-[r:borrow]->(b:book)
+WHERE r.due_date = date("2022-11-12")
+RETURN b
+
+#11(2) List the book were borrowed between Oct 5, 2022 and Oct 15, 2022
+MATCH (m:member)<-[r:borrow]->(b:book)
+WHERE r.date_borrow >= date("2022-10-05")
+AND r.date_borrow <= date("2022-10-15")
+RETURN b
+
+#12(3) Find the allowed borrowing period of the books that have been borrowed.
+MATCH (m:member)<-[r:borrow]->(b:book)
+RETURN duration.inDays(r.date_borrow, r.due_date).days
+
+#13(4) Find the books with their title that have not been return yet
+
+MATCH (m:member)<-[r:borrow]->(b:book)
+WHERE r.return_date = 'n/a'
+RETURN b.title as BookHasNotBeenReturn, b.ISBN as ISBN
+
+#14(5) Count the number of books that have category as ‘Information system’
+MATCH (b:book)<-[:PART_OF]->(c:category)
+WHERE c.genres = 'Information system'
+RETURN COUNT(b)
+
+#15(6) Retrieve all information on the books that have title contain “python”
+MATCH (b:book)
+WHERE b.title CONTAINS toLower("python")
+RETURN b
+
+#16(1) Update location of publisher “Course Technology” as “Florida, USA”
+MATCH (p:publisher{publisher_name: "Course Technology"})
+SET p.publisher_location = 'Florida, USA'
+RETURN p
+
+#17(2) Update new email of member “Luna Dang” as  “lunad@email.ca”
+
+MATCH (m:member{name: "Luna Dang"})
+SET m.email = 'lunad@email.ca'
+RETURN m
+
+#18(3) Update Fine amount for books that have due date is today ("2022-11-12") but have not been returned yet.
+
+MATCH (m:member)<-[r:borrow]->(b:book)
+WHERE r.due_date >= date("2022-11-12")
+SET r.fine_amount = 1
+RETURN m.name, b.title, r.fine_amount
+
+#19(4) Update the payment status as Paid, Payment_date and return_date as today for the member with 
+#memberID: 'm04' cand the book ISBN as 88002
+
+MATCH (m:member{memberID: 'm04'})<-[r:borrow]->(b:book{ISBN: 88002})
+SET r.payment_status = 'PAID'
+SET r.return_date = currentDate
+Return m.name, b.title, r
+
+#20(5) Delete quantity_in_stock field of the books that are not available in store.
+
+MATCH (b:book)
+WHERE b.instore_availability = False
+REMOVE b.quantity_in_stock
+RETURN b
+
+#21(6) Delete the genres "Cookbook" in Categories collection
+MATCH (c:category {genres: 'Cookbook'})
+DELETE c
+RETURN c
+
+#22 (7) Delete the book borrowing record where fine was paid
+MATCH (m:member)<-[r:borrow]->(b:book)
+WHERE r.payment_status = 'paid'
+DELETE r
+RETURN r
+
+#23(8) Find member who has not borrowed books and delete them
+MATCH (m:member)
+WHERE NOT (m)<-[:borrow]->()
+RETURN m
+
+MATCH (m:member)
+WHERE NOT (m)<-[:borrow]->()
+DELETE m
+RETURN m
+
